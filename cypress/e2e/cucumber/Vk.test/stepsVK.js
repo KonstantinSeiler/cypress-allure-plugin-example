@@ -6,6 +6,9 @@ Given('Пользователь перешел на сайт', () => {
 });
 
 
+
+
+
 When('Пользователь нажал ввод номера телефона', () => {
     cy.get('.VkIdForm__input').click()
 });
@@ -20,10 +23,28 @@ When('Пользователь нажал кнопку войти', () => {
 
 });
 
+When('Пользователь нажал Забыли или не установили пароль?', () => {
+   cy.contains('Забыли или не установили пароль?').click()
+
+});
+
+
+When('Пользователь нажал Нет, восстановить пароль', () => {
+cy.get('a[href*="https://vk.com/restore?login=99999999999&restore_nav=qr_go_to_restore"]').click()
+
+});
+
+
+
 
 
 Then('Сайт открыт', () => {
     cy.get('.VkIdForm__form').should('exist')
+});
+
+
+Then('Номер телефона введен', () => {
+    cy.get('input[name="login"]').should('have.value', '99999999999')
 });
 
 
@@ -32,9 +53,10 @@ Then('Открыто окно ввода пароля', () => {
 });
 
 
-Then('Номер телефона введен', () => {
-    cy.get('input[name="login"]').should('have.value', '99999999999')
+Then('Открыто окно выбора восстановления', () => {
+    cy.get('.vkuiModalCardBase__container').should('exist')
 });
+
 
 // Then('Пользователь ввел номер телефона  ', () => {
 //     cy.get('input[type"tel"]').type('9176412286')
