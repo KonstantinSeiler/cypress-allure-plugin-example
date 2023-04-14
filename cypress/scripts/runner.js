@@ -18,7 +18,7 @@ const cypressCucumberConfig = {
     ...cypressConfig,
     ...{
         config: {
-            specPattern: 'cypress/e2e/cucumber/*.feature',
+            specPattern: 'cypress/e2e/cucumber/**/*.feature',
             excludeSpecPattern: '**/*.cy.js'
         }
     }
