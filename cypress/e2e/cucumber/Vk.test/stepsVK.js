@@ -6,34 +6,35 @@ Given('Пользователь перешел на сайт', () => {
 });
 
 
-Then('Сайт открыт', () => {
-    cy.get('.VkIdForm__form').should('exist')
-});
-
 When('Пользователь нажал ввод номера телефона', () => {
     cy.get('.VkIdForm__input').click()
 });
 
 When('Пользователь ввел номер телефона', () => {
-     cy.get('#index_email').type('89176412286')
+     cy.get('#index_email').type('99999999999')
      });
 
-Then('Номер телефона введен', () => {
-    cy.get('input[name="login"]').should('have.value', '89176412286')
-});
 
 When('Пользователь нажал кнопку войти', () => {
-    cy.contains('Войти').click();
+    cy.get('.VkIdForm__signInButton').click()
 
 });
 
 
-Then('Открыто поле ввода номера телефона', () => {
-    cy.get('#id="otp"').should('exist')
+
+Then('Сайт открыт', () => {
+    cy.get('.VkIdForm__form').should('exist')
 });
 
 
+Then('Открыто окно ввода пароля', () => {
+    cy.get('input[name="password"]').should('exist')
+});
 
+
+Then('Номер телефона введен', () => {
+    cy.get('input[name="login"]').should('have.value', '99999999999')
+});
 
 // Then('Пользователь ввел номер телефона  ', () => {
 //     cy.get('input[type"tel"]').type('9176412286')
