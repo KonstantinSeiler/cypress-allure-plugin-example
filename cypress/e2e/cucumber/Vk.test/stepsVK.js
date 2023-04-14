@@ -35,8 +35,6 @@ cy.get('a[href*="https://vk.com/restore?login=99999999999&restore_nav=qr_go_to_r
 });
 
 
-
-
 Then('Сайт открыт', () => {
     cy.get('.VkIdForm__form').should('exist')
 });
@@ -57,7 +55,7 @@ Then('Открыто окно выбора восстановления', () => 
 });
 
 Then('Открыто окно подтверждения пользователя', () => {
-    cy.get('.vkuiGroup__inner').should('exist')
+    cy.get('.vkc__AuthRoot__contentIn').should('exist')
 });
 
 
