@@ -14,7 +14,7 @@ When('Пользователь нажал ввод номера телефона
 });
 
 When('Пользователь ввел номер телефона', () => {
-     cy.get('#index_email').type('99999999999')
+     cy.get('#index_email').type('88888888888')
      });
 
 
@@ -37,14 +37,13 @@ cy.get('a[href*="https://vk.com/restore?login=99999999999&restore_nav=qr_go_to_r
 
 
 
-
 Then('Сайт открыт', () => {
     cy.get('.VkIdForm__form').should('exist')
 });
 
 
 Then('Номер телефона введен', () => {
-    cy.get('input[name="login"]').should('have.value', '99999999999')
+    cy.get('input[name="login"]').should('have.value', '88888888888')
 });
 
 
@@ -56,6 +55,11 @@ Then('Открыто окно ввода пароля', () => {
 Then('Открыто окно выбора восстановления', () => {
     cy.get('.vkuiModalCardBase__container').should('exist')
 });
+
+Then('Открыто окно подтверждения пользователя', () => {
+    cy.get('.vkuiGroup__inner').should('exist')
+});
+
 
 
 // Then('Пользователь ввел номер телефона  ', () => {
