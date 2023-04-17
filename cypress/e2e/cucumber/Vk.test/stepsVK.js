@@ -30,7 +30,7 @@ When('Пользователь нажал Забыли или не устано�
 
 
 When('Пользователь нажал Нет, восстановить пароль', () => {
-cy.get('a[href*="https://vk.com/restore?login=99999999999&restore_nav=qr_go_to_restore"]').click()
+cy.get('a[href*="https://vk.com/restore?login=88888888888&restore_nav=qr_go_to_restore"]').click()
 
 });
 
@@ -55,7 +55,7 @@ Then('Открыто окно выбора восстановления', () => 
 });
 
 Then('Открыто окно подтверждения пользователя', () => {
-    cy.get('.vkc__AuthRoot__contentIn').should('exist')
+    cy.get('.vkuiGroup__inner').should('exist')
 });
 
 
