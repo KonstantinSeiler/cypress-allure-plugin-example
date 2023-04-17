@@ -34,6 +34,10 @@ cy.get('a[href*="https://vk.com/restore?login=88888888888&restore_nav=qr_go_to_r
 
 });
 
+When('Пользователь нажал Продолжить', () => {
+    cy.contains('Продолжить').click()
+ 
+ });
 
 Then('Сайт открыт', () => {
     cy.get('.VkIdForm__form').should('exist')
@@ -56,6 +60,10 @@ Then('Открыто окно выбора восстановления', () => 
 
 Then('Открыто окно подтверждения пользователя', () => {
     cy.get('.vkuiGroup__inner').should('exist')
+});
+
+Then('Открыто окно подтверждения номера телефона', () => {
+    cy.get('.CUAHero-common--skocjj').should('exist')
 });
 
 
