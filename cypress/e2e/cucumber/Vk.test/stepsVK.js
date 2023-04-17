@@ -33,7 +33,7 @@ cy.get('a[href*="https://vk.com/restore?login=88888888888&restore_nav=qr_go_to_r
 });
 
 When('Пользователь нажал Продолжить', () => {
-    cy.contains('Продолжить').click()
+    cy.contains('Продолжить').click() 
  
  });
 
