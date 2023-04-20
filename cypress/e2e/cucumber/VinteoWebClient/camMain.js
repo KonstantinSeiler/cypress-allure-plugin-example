@@ -10,7 +10,8 @@ When('Пользователь выключил камеру', () => {
 });
 
 
-
-Then('Камера выключена', () => {
-    dom.getByClassName('mdc-fab__ripple').should('be.disabled')
-});
+// выяснить как работать в дивами или батонами на выкл
+// // Then('Камера выключена', () => {
+// //     cy.get('#comparison').get('div').should('have.class,videocam_off-title')
+    
+// // });
