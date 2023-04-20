@@ -5,6 +5,6 @@ Given('Пользователь перешел на сайт', () => {
 });
 
 Then('Открыта страница', () => {
-    cy.get('#wrap3').should('exist')
+    cy.get('.layout__workspace__content').should('exist')
 });
 
