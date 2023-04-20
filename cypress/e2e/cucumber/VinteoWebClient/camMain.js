@@ -11,6 +11,6 @@ When('Пользователь выключил камеру', () => {
 
 
 
-// Then('Камера выключена', () => {
-//     cy.get(':checkbox').should('be.disabled')
-// });
+Then('Камера выключена', () => {
+    dom.getByClassName('mdc-fab__ripple').should('be.disabled')
+});
