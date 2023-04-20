@@ -6,14 +6,19 @@ Given('Пользователь перешел на сайт', () => {
 
 
 
+
+
+
 When('Пользователь нажал на строку ввода имени', () => {
-    cy.get('#input9').click()
+    cy.get('.mdc-text-field__input').click()
 });
 
 
 
 
-
+When('Пользователь ввел имя кс', () => {
+    cy.get('.mdc-text-field__input').type('кс')
+    });
 
 
 
@@ -25,5 +30,10 @@ Then('Открыта страница', () => {
 
 
 Then('Доступно поле ввода', () => {
-    cy.get('#input9').should('exist')
+    cy.get('.mdc-text-field__input').should('exist')
+});
+
+
+Then('кс введено в поле', () => {
+    cy.get('.mdc-text-field__input').should('have.value', 'кс')
 });
